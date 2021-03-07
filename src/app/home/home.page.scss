@@ -1,27 +1,21 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.round {
+    height: 5em;
+    box-sizing: content-box;
+    font-size:1.2em;
 }
+.myIcon {
+    width: 3em;
+    height: 3em;
+  }
+  .myImg {
+   width:"400";
+     height:"180";
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+  }
+  .imgPrincipal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 31%;
+   }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
