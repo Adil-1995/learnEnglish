@@ -8,5 +8,8 @@
 </ion-header>
 
 <ion-content>
-<h6>here we make the test</h6>
+  <div *ngFor="let item of examenArray">
+    <h1>{{item.parteUno}}</h1>
+    <h2>{{item.parteDos}}</h2>
+  </div>
 </ion-content>

@@ -10,7 +10,7 @@ import { ComputingService } from 'src/app/shared/computing.service';
 export class InformaticaPage implements OnInit {
 
   public frases: Cadenas[];
-
+  private id: number = 3;
   constructor(private infomatica: ComputingService) {
     this.frases = this.infomatica.frases;
   }
