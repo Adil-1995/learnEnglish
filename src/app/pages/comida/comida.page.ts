@@ -17,6 +17,13 @@ export class ComidaPage implements OnInit {
   }
 
   ngOnInit() {
+<<<<<<< HEAD
+=======
+  }
+
+  toExamen() {
+    this.router.navigate(['examen']);
+>>>>>>> fe109c003c671d8f0c893a9ef7b5eb264d2fb172
   }
   routerMe() {
     const extrasDeNavegcacion: NavigationExtras = {

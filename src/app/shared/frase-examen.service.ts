@@ -1,14 +1,18 @@
 import {Injectable} from '@angular/core';
 import {DatosEnglishService} from './datos-english.service';
 import {Examen} from '../core/Examen';
+<<<<<<< HEAD
 import {Palabra} from '../core/palabra';
 import {PalabrasService} from './palabras.service';
+=======
+>>>>>>> fe109c003c671d8f0c893a9ef7b5eb264d2fb172
 
 @Injectable({
   providedIn: 'root'
 })
 export class FraseExamenService {
 
+<<<<<<< HEAD
   constructor(private db: DatosEnglishService, private palabrasServ: PalabrasService) {
   }
 
@@ -45,4 +49,14 @@ export class FraseExamenService {
     });
 
   }
+=======
+  constructor(private db: DatosEnglishService) {
+  }
+
+   generateData(tipo: number) {
+    return new Promise<Examen[]>((resolve, reject) => {
+      this.db.getExamenFromType(tipo).then((data) => resolve(data));
+    });
+  }
+>>>>>>> fe109c003c671d8f0c893a9ef7b5eb264d2fb172
 }

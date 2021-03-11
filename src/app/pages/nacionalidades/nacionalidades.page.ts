@@ -1,7 +1,10 @@
 import {NacionalitiesService} from './../../shared/nacionalities.service';
 import {Component, OnInit} from '@angular/core';
 import {Cadenas} from 'src/app/core/cadenas';
+<<<<<<< HEAD
 import {NavigationExtras, Router} from '@angular/router';
+=======
+>>>>>>> fe109c003c671d8f0c893a9ef7b5eb264d2fb172
 
 @Component({
   selector: 'app-nacionalidades',

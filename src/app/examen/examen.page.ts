@@ -18,6 +18,7 @@ export class ExamenPage implements OnInit {
       this.id = this.route.getCurrentNavigation().extras.state.idTema;
       this.fraseExamen.generateData(this.id).then((data) => this.examenArray = data);
     });
+<<<<<<< HEAD
   }
 
   ngOnInit() {
@@ -30,5 +31,10 @@ export class ExamenPage implements OnInit {
       alert('Fallado');
     }
 
+=======
+  }
+
+  ngOnInit() {
+>>>>>>> fe109c003c671d8f0c893a9ef7b5eb264d2fb172
   }
 }
