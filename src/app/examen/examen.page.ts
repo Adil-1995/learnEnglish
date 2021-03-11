@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
+import {PalabrasService} from '../shared/palabras.service';
+import {FraseExamenService} from '../shared/frase-examen.service';
+import {Examen} from '../core/Examen';
 
 @Component({
   selector: 'app-examen',
@@ -7,12 +10,25 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./examen.page.scss'],
 })
 export class ExamenPage implements OnInit {
-  cadena: string;
-  constructor(private route: Router, private rutaActivada: ActivatedRoute) {
-    // this.rutaActivada.queryParamMap.subscribe(() => {
-    //   this.cadena = this.route.getCurrentNavigation().extras.state.nameCurso;
-    // });
+  private id: number;
+  private examenArray: Examen[] = [];
+
+  constructor(private route: Router, private rutaActivada: ActivatedRoute, private palabrasServ: PalabrasService, private fraseExamen: FraseExamenService) {
+    this.rutaActivada.queryParamMap.subscribe(() => {
+      this.id = this.route.getCurrentNavigation().extras.state.idTema;
+      this.fraseExamen.generateData(this.id).then((data) => this.examenArray = data);
+    });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
+
+  isCorrecto(idCorrecto: number, idPrueba: number) {
+    if (idCorrecto === idPrueba) {
+      alert('Correcto');
+    } else {
+      alert('Fallado');
+    }
+
+  }
 }
