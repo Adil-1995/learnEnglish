@@ -1,6 +1,6 @@
-import { NacionalitiesService } from './../../shared/nacionalities.service';
-import { Component, OnInit } from '@angular/core';
-import { Cadenas } from 'src/app/core/cadenas';
+import {NacionalitiesService} from './../../shared/nacionalities.service';
+import {Component, OnInit} from '@angular/core';
+import {Cadenas} from 'src/app/core/cadenas';
 
 @Component({
   selector: 'app-nacionalidades',
@@ -9,6 +9,7 @@ import { Cadenas } from 'src/app/core/cadenas';
 })
 export class NacionalidadesPage implements OnInit {
   public frases: Cadenas[];
+  private id: number = 4;
 
   constructor(private nacionalidad: NacionalitiesService) {
     this.frases = this.nacionalidad.frases;
