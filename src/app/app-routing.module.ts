@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'nacionalidades',
     loadChildren: () => import('./pages/nacionalidades/nacionalidades.module').then( m => m.NacionalidadesPageModule)
+  },
+  {
+    path: 'examen',
+    loadChildren: () => import('./examen/examen.module').then( m => m.ExamenPageModule)
   }
 ];
 

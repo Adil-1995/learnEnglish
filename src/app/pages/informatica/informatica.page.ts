@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Cadenas } from 'src/app/core/cadenas';
+import { ComputingService } from 'src/app/shared/computing.service';
 
 @Component({
   selector: 'app-informatica',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformaticaPage implements OnInit {
 
-  constructor() { }
+  public frases: Cadenas[];
+
+  constructor(private infomatica: ComputingService) {
+    this.frases = this.infomatica.frases;
+  }
 
   ngOnInit() {
   }

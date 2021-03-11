@@ -7,6 +7,14 @@
 </ion-header> -->
 
 <ion-content [fullscreen]="true">
+
+      <div>
+        <ion-button color="tertiary" (click)="copia()">
+          <ion-icon slot="start" name="copy"></ion-icon>
+          Copy Data Base
+        </ion-button>
+      </div>
+
   <div class="imgPrincipal">
     <ion-img src="../../assets/img/learn.jpg"></ion-img>
   </div>
@@ -22,7 +30,7 @@
       slot="start"
       src="../../assets/icon/passenger.svg"
     ></ion-icon>
-    <!-- <ion-icon name="airplane-outline"></ion-icon> Viajar -->
+
     Viajar
   </ion-button>
   <ion-button
@@ -64,4 +72,7 @@
     ></ion-icon>
     Nacionalidades</ion-button
   >
+
 </ion-content>
+
+

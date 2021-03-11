@@ -1,5 +1,7 @@
+import { TravelService } from './../../shared/travel.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Cadenas } from 'src/app/core/cadenas';
 
 @Component({
   selector: 'app-viajar',
@@ -7,16 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viajar.page.scss'],
 })
 export class ViajarPage implements OnInit {
-  variableRecibida: number;
+  public frases: Cadenas[];
 
-  constructor(public route: Router, private rutaActiva: ActivatedRoute) { }
+  constructor(private travel: TravelService) {
+    this.frases = this.travel.frases;
+  }
 
   ngOnInit() {
-     this.rutaActiva.queryParams.subscribe(() => {
-       // tslint:disable-next-line:prefer-const
-       let navVariable = this.route.getCurrentNavigation().extras.state;
-       this.variableRecibida = navVariable.variableApasar;
-    });
   }
+
 
 }

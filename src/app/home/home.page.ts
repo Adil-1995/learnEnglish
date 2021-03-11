@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { CopyService } from '../shared/copy.service';
+import { DatosEnglishService } from '../shared/datos-english.service';
 
 @Component({
   selector: 'app-home',
@@ -7,23 +9,28 @@ import { NavigationExtras, Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  // public variable: Number = 10;
   public variable = 4;
-  // tslint:disable-next-line:ban-types
-  public mostrar: Boolean;
-  constructor(private router: Router) {}
+  public mostrar: boolean;
+  frasesList: any[] = [];
+  constructor(
+    private copiaService: CopyService,
+    private datoEnglish: DatosEnglishService,
+    private router: Router,
+    private rutaActiva: ActivatedRoute
+  ) {}
 
+  copia() {
+    this.copiaService.copiarBBDD();
+  }
   toViajar() {
     const navExtras: NavigationExtras = {
-      // NavigationExtras =>para pasar cada datos
       state: {
-        variableApasar: this.variable
-
       },
     };
     this.router.navigate(['viajar'], navExtras);
   }
   toComida() {
+
     this.router.navigate(['comida']);
   }
   toInformatica() {
